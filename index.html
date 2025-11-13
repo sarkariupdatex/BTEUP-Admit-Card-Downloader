@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PolyResources | BTEUP Materials</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #4361ee;
+            --primary-dark: #3a56d4;
+            --secondary: #7209b7;
+            --accent: #4cc9f0;
+            --telegram: #0088cc;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #4bb543;
+            --card-bg: rgba(255, 255, 255, 0.9);
+            --glass-bg: rgba(255, 255, 255, 0.25);
+            --glass-border: rgba(255, 255, 255, 0.18);
+            --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+            color: var(--dark);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: white;
+            position: relative;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--primary);
+            box-shadow: var(--shadow);
+        }
+
+        .logo-text {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .telegram-banner {
+            background: linear-gradient(135deg, var(--telegram), #24a1de);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(0, 136, 204, 0.4);
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .telegram-banner:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 136, 204, 0.6);
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            display: inline-block;
+            padding: 1rem;
+            background: rgba(67, 97, 238, 0.1);
+            border-radius: 15px;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .card-description {
+            color: #555;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .input-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: white;
+            letter-spacing: 1px;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+        }
+
+        .input-note {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 0.5rem;
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+            padding: 1rem 1.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            border-radius: 100%;
+            transform: scale(1, 1) translate(-50%);
+            transform-origin: 50% 50%;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 14px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:active::after {
+            animation: ripple 1s ease-out;
+        }
+
+        @keyframes ripple {
+            0% {
+                transform: scale(0, 0);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(20, 20);
+                opacity: 0;
+            }
+        }
+
+        /* ===== IMPROVED BRANCH SECTION ===== */
+        .branch-section {
+            background: var(--card-bg);
+            border-radius: 25px;
+            padding: 3rem 2rem;
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 3rem;
+        }
+
+        .branch-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(67, 97, 238, 0.05) 0%, rgba(114, 9, 183, 0.05) 100%);
+            z-index: 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .branch-container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .branch-categories {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            padding: 0.8rem 1.5rem;
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 50px;
+            font-weight: 600;
+            color: #666;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .category-btn.active,
+        .category-btn:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+        }
+
+        .branch-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .branch-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #f0f0f0;
+        }
+
+        .branch-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .branch-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .branch-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .branch-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: white;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+        }
+
+        .branch-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .branch-description {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .branch-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            font-size: 0.85rem;
+        }
+
+        .stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .stat-value {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .stat-label {
+            color: #888;
+            font-size: 0.75rem;
+        }
+
+        .branch-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .action-btn {
+            flex: 1;
+            padding: 0.7rem;
+            background: rgba(67, 97, 238, 0.1);
+            border: none;
+            border-radius: 10px;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.3rem;
+        }
+
+        .action-btn:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* ===== NEW FEATURES ===== */
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: #e0e0e0;
+            border-radius: 3px;
+            margin: 0.5rem 0 1rem;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 3px;
+            transition: width 0.5s ease;
+        }
+
+        .feature-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--accent);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        .popular-tag {
+            background: #ff6b6b;
+        }
+
+        .new-tag {
+            background: var(--success);
+        }
+
+        .trending-tag {
+            background: #ff9e1a;
+        }
+
+        .resource-preview {
+            display: flex;
+            gap: 0.5rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+
+        .resource-chip {
+            background: rgba(67, 97, 238, 0.1);
+            color: var(--primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: rgba(0, 0, 0, 0.2);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            border-radius: 20px;
+            margin-top: 2rem;
+            width: 100%;
+            backdrop-filter: blur(10px);
+        }
+
+        .copyright {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: white;
+        }
+
+        .floating-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .floating-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .notification {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            padding: 1rem 1.5rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transform: translateX(150%);
+            transition: transform 0.5s ease;
+            z-index: 1000;
+        }
+
+        .notification.show {
+            transform: translateX(0);
+        }
+
+        .notification.success {
+            border-left: 4px solid var(--success);
+        }
+
+        .notification.error {
+            border-left: 4px solid #ff4757;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(67, 97, 238, 0.2);
+            border-left: 4px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .branch-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo-text {
+                font-size: 2rem;
+            }
+            
+            .branch-categories {
+                gap: 0.5rem;
+            }
+            
+            .category-btn {
+                padding: 0.6rem 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .branch-section {
+                padding: 2rem 1rem;
+            }
+            
+            .card {
+                padding: 1.5rem;
+            }
+            
+            .branch-actions {
+                flex-direction: column;
+            }
+            
+            .telegram-banner {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h1 class="logo-text">PolyResources</h1>
+            </div>
+            <p class="tagline">Your one-stop solution for BTEUP admit cards, verification, and study materials</p>
+            <a href="https://t.me/sarkariupdatex" class="telegram-banner" target="_blank" id="telegramBtn">
+                <i class="fab fa-telegram"></i>
+                Join Our Telegram Channel for Updates
+            </a>
+        </div>
+
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-id-card"></i>
+                </div>
+                <h2 class="card-title">Admit Card</h2>
+                <p class="card-description">Download your BTEUP admit card for 2025 examinations by entering your enrollment number.</p>
+                
+                <div class="input-group">
+                    <input type="text" class="input-field" id="enrollInput" placeholder="Enter Enrollment Number (e.g., E25110135600065)">
+                    <div class="input-note">Enter your complete enrollment number starting with E</div>
+                </div>
+                
+                <button class="btn" onclick="openAdmitCard()">
+                    <i class="fas fa-download"></i> Download Admit Card
+                </button>
+                
+                <div class="loading" id="admitLoading">
+                    <div class="spinner"></div>
+                    <p>Processing your request...</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-file-check"></i>
+                </div>
+                <h2 class="card-title">Verification Card</h2>
+                <p class="card-description">Get your BTEUP verification card by entering your enrollment number below.</p>
+                
+                <div class="input-group">
+                    <input type="text" class="input-field" id="verifyInput" placeholder="Enter Enrollment Number (e.g., E25110135600065)">
+                    <div class="input-note">Enter your complete enrollment number starting with E</div>
+                </div>
+                
+                <button class="btn" onclick="openVerifyCard()">
+                    <i class="fas fa-download"></i> Download Verification Card
+                </button>
+                
+                <div class="loading" id="verifyLoading">
+                    <div class="spinner"></div>
+                    <p>Processing your request...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- IMPROVED BRANCH SECTION -->
+        <div class="branch-section">
+            <div class="section-header">
+                <h2 class="section-title">Explore Study Materials</h2>
+                <p class="section-subtitle">Access comprehensive resources, notes, previous year papers, and video lectures for your engineering branch</p>
+            </div>
+            
+            <div class="branch-container">
+                <div class="branch-categories">
+                    <button class="category-btn active" data-category="all">All Branches</button>
+                    <button class="category-btn" data-category="core">Core Engineering</button>
+                    <button class="category-btn" data-category="computer">Computer Fields</button>
+                    <button class="category-btn" data-category="emerging">Emerging Fields</button>
+                    <button class="category-btn" data-category="popular">Most Popular</button>
+                </div>
+                
+                <div class="branch-grid">
+                    <div class="branch-card" data-category="computer popular">
+                        <div class="feature-badge popular-tag">Most Popular</div>
+                        <div class="branch-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3 class="branch-name">Computer Science</h3>
+                        <p class="branch-description">Programming, algorithms, databases, software engineering, and computer networks with latest technologies.</p>
+                        
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 85%"></div>
+                        </div>
+                        
+                        <div class="resource-preview">
+                            <span class="resource-chip">PYQ 2024</span>
+                            <span class="resource-chip">Lab Manuals</span>
+                            <span class="resource-chip">Projects</span>
+                        </div>
+                        
+                        <div class="branch-stats">
+                            <div class="stat">
+                                <span class="stat-value">250+</span>
+                                <span class="stat-label">Resources</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">85%</span>
+                                <span class="stat-label">Complete</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">4.8</span>
+                                <span class="stat-label">Rating</span>
+                            </div>
+                        </div>
+                        <div class="branch-actions">
+                            <button class="action-btn" onclick="openBranch('cse')">
+                                <i class="fas fa-book-open"></i> Notes
+                            </button>
+                            <button class="action-btn" onclick="openBranch('cse')">
+                                <i class="fas fa-file-pdf"></i> Papers
+                            </button>
+                            <button class="action-btn" onclick="openBranch('cse')">
+                                <i class="fas fa-video"></i> Videos
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="branch-card" data-category="core">
+                        <div class="branch-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3 class="branch-name">Mechanical</h3>
+                        <p class="branch-description">Thermodynamics, machine design, manufacturing, automotive engineering and industrial applications.</p>
+                        
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 78%"></div>
+                        </div>
+                        
+                        <div class="resource-preview">
+                            <span class="resource-chip">Workshop</span>
+                            <span class="resource-chip">Diagrams</span>
+                            <span class="resource-chip">CAD Files</span>
+                        </div>
+                        
+                        <div class="branch-stats">
+                            <div class="stat">
+                                <span class="stat-value">180+</span>
+                                <span class="stat-label">Resources</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">78%</span>
+                                <span class="stat-label">Complete</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">4.6</span>
+                                <span class="stat-label">Rating</span>
+                            </div>
+                        </div>
+                        <div class="branch-actions">
+                            <button class="action-btn" onclick="openBranch('mechanical')">
+                                <i class="fas fa-book-open"></i> Notes
+                            </button>
+                            <button class="action-btn" onclick="openBranch('mechanical')">
+                                <i class="fas fa-file-pdf"></i> Papers
+                            </button>
+                            <button class="action-btn" onclick="openBranch('mechanical')">
+                                <i class="fas fa-video"></i> Videos
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="branch-card" data-category="core trending">
+                        <div class="feature-badge trending-tag">Trending</div>
+                        <div class="branch-icon">
+                            <i class="fas fa-hard-hat"></i>
+                        </div>
+                        <h3 class="branch-name">Civil</h3>
+                        <p class="branch-description">Structural engineering, construction, surveying, transportation systems and environmental engineering.</p>
+                        
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 82%"></div>
+                        </div>
+                        
+                        <div class="resource-preview">
+                            <span class="resource-chip">Survey Data</span>
+                            <span class="resource-chip">Designs</span>
+                            <span class="resource-chip">Estimates</span>
+                        </div>
+                        
+                        <div class="branch-stats">
+                            <div class="stat">
+                                <span class="stat-value">220+</span>
+                                <span class="stat-label">Resources</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">82%</span>
+                                <span class="stat-label">Complete</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">4.7</span>
+                                <span class="stat-label">Rating</span>
+                            </div>
+                        </div>
+                        <div class="branch-actions">
+                            <button class="action-btn" onclick="openBranch('civil')">
+                                <i class="fas fa-book-open"></i> Notes
+                            </button>
+                            <button class="action-btn" onclick="openBranch('civil')">
+                                <i class="fas fa-file-pdf"></i> Papers
+                            </button>
+                            <button class="action-btn" onclick="openBranch('civil')">
+                                <i class="fas fa-video"></i> Videos
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="branch-card" data-category="core">
+                        <div class="branch-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3 class="branch-name">Electrical</h3>
+                        <p class="branch-description">Power systems, electronics, control systems, electrical machines and renewable energy technologies.</p>
+                        
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 80%"></div>
+                        </div>
+                        
+                        <div class="resource-preview">
+                            <span class="resource-chip">Circuits</span>
+                            <span class="resource-chip">Schematics</span>
+                            <span class="resource-chip">Calculations</span>
+                        </div>
+                        
+                        <div class="branch-stats">
+                            <div class="stat">
+                                <span class="stat-value">190+</span>
+                                <span class="stat-label">Resources</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">80%</span>
+                                <span class="stat-label">Complete</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">4.5</span>
+                                <span class="stat-label">Rating</span>
+                            </div>
+                        </div>
+                        <div class="branch-actions">
+                            <button class="action-btn" onclick="openBranch('electrical')">
+                                <i class="fas fa-book-open"></i> Notes
+                            </button>
+                            <button class="action-btn" onclick="openBranch('electrical')">
+                                <i class="fas fa-file-pdf"></i> Papers
+                            </button>
+                            <button class="action-btn" onclick="openBranch('electrical')">
+                                <i class="fas fa-video"></i> Videos
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="branch-card" data-category="core new">
+                        <div class="feature-badge new-tag">Updated</div>
+                        <div class="branch-icon">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <h3 class="branch-name">Electronics</h3>
+                        <p class="branch-description">Digital electronics, microprocessors, communication systems, VLSI design and embedded systems.</p>
+                        
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 75%"></div>
+                        </div>
+                        
+                        <div class="resource-preview">
+                            <span class="resource-chip">PCB Designs</span>
+                            <span class="resource-chip">Simulations</span>
+                            <span class="resource-chip">Code</span>
+                        </div>
+                        
+                        <div class="branch-stats">
+                            <div class="stat">
+                                <span class="stat-value">170+</span>
+                                <span class="stat-label">Resources</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">75%</span>
+                                <span class="stat-label">Complete</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">4.6</span>
+                                <span class="stat-label">Rating</span>
+                            </div>
+                        </div>
+                        <div class="branch-actions">
+                            <button class="action-btn" onclick="openBranch('electronics')">
+                                <i class="fas fa-book-open"></i> Notes
+                            </button>
+                            <button class="action-btn" onclick="openBranch('electronics')">
+                                <i class="fas fa-file-pdf"></i> Papers
+                            </button>
+                            <button class="action-btn" onclick="openBranch('electronics')">
+                                <i class="fas fa-video"></i> Videos
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="branch-card" data-category="emerging">
+                        <div class="branch-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h3 class="branch-name">Automobile</h3>
+                        <p class="branch-description">Vehicle design, automotive systems, engine technology, electric vehicles and transportation engineering.</p>
+                        
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 70%"></div>
+                        </div>
+                        
+                        <div class="resource-preview">
+                            <span class="resource-chip">EV Tech</span>
+                            <span class="resource-chip">Designs</span>
+                            <span class="resource-chip">Manual</span>
+                        </div>
+                        
+                        <div class="branch-stats">
+                            <div class="stat">
+                                <span class="stat-value">120+</span>
+                                <span class="stat-label">Resources</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">70%</span>
+                                <span class="stat-label">Complete</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">4.4</span>
+                                <span class="stat-label">Rating</span>
+                            </div>
+                        </div>
+                        <div class="branch-actions">
+                            <button class="action-btn" onclick="openBranch('automobile')">
+                                <i class="fas fa-book-open"></i> Notes
+                            </button>
+                            <button class="action-btn" onclick="openBranch('automobile')">
+                                <i class="fas fa-file-pdf"></i> Papers
+                            </button>
+                            <button class="action-btn" onclick="openBranch('automobile')">
+                                <i class="fas fa-video"></i> Videos
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <div class="copyright">
+            &copy; 2025 SarkariUpdateX. All Rights Reserved.
+        </div>
+        <div class="footer-links">
+            <a href="#" class="footer-link">Privacy Policy</a>
+            <a href="#" class="footer-link">Terms of Service</a>
+            <a href="#" class="footer-link">Contact Us</a>
+            <a href="https://t.me/sarkariupdatex" class="footer-link" target="_blank">Telegram Channel</a>
+        </div>
+    </div>
+
+    <div class="floating-btn" id="helpBtn">
+        <i class="fas fa-question"></i>
+    </div>
+
+    <div class="notification" id="notification">
+        <i class="fas fa-check-circle"></i>
+        <span id="notificationText">Operation completed successfully!</span>
+    </div>
+
+    <script>
+        // Telegram redirect
+        document.getElementById('telegramBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            showNotification("Redirecting to Telegram Channel...", "success");
+            setTimeout(() => {
+                window.open('https://t.me/sarkariupdatex', '_blank');
+            }, 1000);
+        });
+
+        // Admit card function
+        function openAdmitCard() {
+            let enroll = document.getElementById("enrollInput").value.trim();
+            let loading = document.getElementById("admitLoading");
+            
+            if (enroll === "") {
+                showNotification("कृपया अपना Enrollment Number दर्ज करें!", "error");
+                return;
+            }
+            
+            // Basic validation - just check if it starts with E and has some numbers
+            if (!/^E\d+$/.test(enroll)) {
+                showNotification("कृपया सही Enrollment Number दर्ज करें (E से शुरू होना चाहिए)!", "error");
+                return;
+            }
+            
+            // Show loading animation
+            loading.style.display = "block";
+            
+            // Simulate API call delay
+            setTimeout(function() {
+                let url = `https://bteup.ac.in/ESeva/Student/AdmitCard.aspx?EnrollNumber=${encodeURIComponent(enroll)}`;
+                window.open(url, "_blank");
+                loading.style.display = "none";
+                showNotification("Admit card download initiated successfully!", "success");
+            }, 1500);
+        }
+        
+        // Verification card function
+        function openVerifyCard() {
+            let enroll = document.getElementById("verifyInput").value.trim();
+            let loading = document.getElementById("verifyLoading");
+            
+            if (enroll === "") {
+                showNotification("कृपया अपना Enrollment Number दर्ज करें!", "error");
+                return;
+            }
+            
+            // Basic validation - just check if it starts with E and has some numbers
+            if (!/^E\d+$/.test(enroll)) {
+                showNotification("कृपया सही Enrollment Number दर्ज करें (E से शुरू होना चाहिए)!", "error");
+                return;
+            }
+            
+            // Show loading animation
+            loading.style.display = "block";
+            
+            // Simulate API call delay
+            setTimeout(function() {
+                let url = `https://bteup.ac.in/ESeva/Student/VerificationCard.aspx?EnrollNumber=${encodeURIComponent(enroll)}`;
+                window.open(url, "_blank");
+                loading.style.display = "none";
+                showNotification("Verification card download initiated successfully!", "success");
+            }, 1500);
+        }
+        
+        // Branch category filtering
+        document.querySelectorAll('.category-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Update active button
+                document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                const category = this.getAttribute('data-category');
+                const branchCards = document.querySelectorAll('.branch-card');
+                
+                branchCards.forEach(card => {
+                    const cardCategories = card.getAttribute('data-category').split(' ');
+                    
+                    if (category === 'all' || cardCategories.includes(category)) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 10);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+        
+        // Branch actions
+        function openBranch(branch) {
+            showNotification(`Opening ${branch.toUpperCase()} study materials...`, "success");
+        }
+        
+        // Add enter key functionality
+        document.getElementById("enrollInput").addEventListener("keyup", function(event) {
+            if (event.key === "Enter") {
+                openAdmitCard();
+            }
+        });
+        
+        document.getElementById("verifyInput").addEventListener("keyup", function(event) {
+            if (event.key === "Enter") {
+                openVerifyCard();
+            }
+        });
+        
+        // Notification system
+        function showNotification(message, type) {
+            const notification = document.getElementById("notification");
+            const notificationText = document.getElementById("notificationText");
+            
+            notificationText.textContent = message;
+            notification.className = "notification " + type;
+            notification.classList.add("show");
+            
+            setTimeout(() => {
+                notification.classList.remove("show");
+            }, 3000);
+        }
+        
+        // Floating help button
+        document.getElementById("helpBtn").addEventListener("click", function() {
+            showNotification("For assistance, please contact support@sarkariupdatex.com", "success");
+        });
+        
+        // Add ripple effect to buttons
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                let x = e.clientX - e.target.getBoundingClientRect().left;
+                let y = e.clientY - e.target.getBoundingClientRect().top;
+                
+                let ripples = document.createElement('span');
+                ripples.style.left = x + 'px';
+                ripples.style.top = y + 'px';
+                this.appendChild(ripples);
+                
+                setTimeout(() => {
+                    ripples.remove();
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>
